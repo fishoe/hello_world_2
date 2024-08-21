@@ -3,9 +3,11 @@ FROM ubuntu:22.04
 LABEL authors="hangil.kim"
 
 # Install necessary packages
-RUN apt -qq update \
-&& apt -qq install -y g++ cmake wget unzip python3 \
-&& apt clean
+RUN apt-get update && apt-get install -y --no-install-recommends\
+    cmake \
+    gcc \
+    make \
+    && rm -rf /var/lib/apt/lists/*
 
 # Set the working directory
 WORKDIR /app
