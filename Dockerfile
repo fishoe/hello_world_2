@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:22.04
 
 LABEL authors="hangil.kim"
 
@@ -6,6 +6,7 @@ LABEL authors="hangil.kim"
 RUN apt-get update && apt-get install -y --no-install-recommends\
     gcc \
     make \
+    curl \
     && rm -rf /var/lib/apt/lists/*
 
 # Set the working directory
