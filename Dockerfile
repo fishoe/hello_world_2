@@ -4,13 +4,20 @@ LABEL authors="hangil.kim"
 
 # Install necessary packages
 RUN apt-get update && apt-get install -y --no-install-recommends\
-    cmake \
     gcc \
     make \
     && rm -rf /var/lib/apt/lists/*
 
 # Set the working directory
 WORKDIR /app
+
+RUN curl -fsSL https://github.com/Kitware/CMake/releases/download/v3.30.2/cmake-3.30.2-linux-x86_64.sh -o cmake.sh
+
+RUN sudo bash ./cmake.sh
+
+RUN export PATH=/app/cmake-3.30.2-linux-x86_64/bin:$PATH
+
+RUN cmake --version
 
 # Copy the project files
 COPY . .
