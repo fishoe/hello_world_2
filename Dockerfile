@@ -14,7 +14,7 @@ WORKDIR /app
 
 RUN curl http://github.com/Kitware/CMake/releases/download/v3.30.2/cmake-3.30.2-linux-x86_64.sh -o cmake.sh
 
-RUN sudo bash ./cmake.sh
+RUN ./cmake.sh
 
 RUN export PATH=/app/cmake-3.30.2-linux-x86_64/bin:$PATH
 
