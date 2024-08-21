@@ -3,20 +3,13 @@ FROM ubuntu:22.04
 LABEL authors="hangil.kim"
 
 # Install necessary packages
-RUN apt-get update && apt-get install -y --no-install-recommends\
-    gcc \
-    make \
-    curl \
-    && rm -rf /var/lib/apt/lists/*
+FROM ubuntu:20.04
+RUN apt -qq update \
+&& apt -qq install -y g++ cmake wget unzip python3 \
+&& apt clean
 
 # Set the working directory
 WORKDIR /app
-
-RUN curl http://github.com/Kitware/CMake/releases/download/v3.30.2/cmake-3.30.2-linux-x86_64.sh -o cmake.sh
-
-RUN bash ./cmake.sh
-
-RUN export PATH=/app/cmake-3.30.2-linux-x86_64/bin:$PATH
 
 RUN cmake --version
 
