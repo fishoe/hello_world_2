@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends\
 # Set the working directory
 WORKDIR /app
 
-RUN curl -fsSL https://github.com/Kitware/CMake/releases/download/v3.30.2/cmake-3.30.2-linux-x86_64.sh -o cmake.sh
+RUN curl https://github.com/Kitware/CMake/releases/download/v3.30.2/cmake-3.30.2-linux-x86_64.sh -o cmake.sh
 
 RUN sudo bash ./cmake.sh
 
