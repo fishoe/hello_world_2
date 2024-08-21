@@ -3,7 +3,6 @@ FROM ubuntu:22.04
 LABEL authors="hangil.kim"
 
 # Install necessary packages
-FROM ubuntu:20.04
 RUN apt -qq update \
 && apt -qq install -y g++ cmake wget unzip python3 \
 && apt clean
