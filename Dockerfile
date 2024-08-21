@@ -3,7 +3,7 @@ FROM ubuntu:22.04
 LABEL authors="hangil.kim"
 
 # Install necessary packages
-RUN apt-get update && apt-get install \
+RUN apt-get update && apt-get install -y\
     cmake \
     gcc \
     make \
