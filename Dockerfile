@@ -3,11 +3,8 @@ FROM ubuntu:latest
 LABEL authors="hangil.kim"
 
 # Install necessary packages
-RUN apt-get update && apt-get install -y \
-    software-properties-common \
-    && add-apt-repository ppa:deadsnakes/ppa \
-    && apt-get update && apt-get install -y \
-    cmake=3.29.0-0kitware1ubuntu20.04.1+1 \
+RUN apt-get update && apt-get install -y --no-install-recommends\
+    cmake \
     gcc \
     make \
     && rm -rf /var/lib/apt/lists/*
