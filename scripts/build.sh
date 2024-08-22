@@ -1,3 +1,7 @@
-cd build
+#!/bin/bash
+
+cd build || exit
+
 cmake ..
+
 make
