@@ -7,5 +7,6 @@ int main(void) {
 
     printf("4 + 7 = %d\n", t);
     printf("8 - 3 = %d\n", u);
+    printf("4 * 7 = %d\n", mul(4, 7));
     return 0;
 }
