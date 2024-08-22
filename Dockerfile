@@ -21,4 +21,7 @@ COPY . .
 RUN mkdir -p build
 
 # Build the project
-CMD ["cd build && cmake .. && make"]
+RUN cd build && cmake .. && make
+
+# Set the entry point
+CMD ["./build/hello_world_2"]
