@@ -11,3 +11,7 @@ int sum(const int a, const int b) {
 int sub(const int a, const int b) {
     return a - b;
 }
+
+int mul(const int a, const int b) {
+    return a * b;
+}
