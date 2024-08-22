@@ -20,4 +20,4 @@ COPY . .
 RUN chmod +x ./scripts/build.sh
 
 # Set the entry point
-CMD ["sh ./scripts/build.sh"]
+ENTRYPOINT ["./scripts/build.sh"]
